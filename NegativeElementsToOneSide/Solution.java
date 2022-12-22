@@ -3,7 +3,7 @@ package NegativeElementsToOneSide;
 import java.util.Arrays;
 
 public class Solution {
-
+    // at left end
     // public static int[] negativesAtOneEnd(int [] arr){
     //     int pivot = -1; // pivot pointer
     //     for(int j = 0; j < arr.length; j++){
@@ -17,7 +17,8 @@ public class Solution {
     //     }
     //     return arr;
     // }
-
+    
+    // at right end
     public static int[] negativesAtOneEnd(int [] arr){
         int l = arr.length;
         int pivot = l; // pivot pointer
