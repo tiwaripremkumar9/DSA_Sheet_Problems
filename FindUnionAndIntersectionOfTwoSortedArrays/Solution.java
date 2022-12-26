@@ -32,7 +32,7 @@ public class Solution {
                     j++;
                 }
                 if(arr1[i] == arr2[j]){
-                    list.add(arr2[j]);
+                    list.add(arr2[j]); ////if same, we can print any one of arr1[i] or arr2[j]
                     i++;
                     j++;
                 }
@@ -62,10 +62,37 @@ public class Solution {
         return result;
     }
 
+    public static int[] intersection(int [] arr1, int [] arr2) {
+        int i = 0;
+        int j = 0;
+        List<Integer> list = new ArrayList<>();
+        while(i < arr1.length || j < arr2.length){
+            if(arr1[i] < arr2[j]){
+                i++;
+            }
+            if(arr1[i] > arr2[j]){
+                j++;
+            }
+            if(arr1[i] == arr2[j]){
+                list.add(arr2[j]); //if same, we can print any one of arr1[i] or arr2[j]
+                j++;
+                i++;
+            }
+        }
+        int [] result = new int[list.size()];
+        int k = 0;
+        for (Integer each : list) {
+            result[k++] = each;   
+        }
+        return result;
+
+    }
+
     
     public static void main(String[] args) {
         int [] arr1 = {1,4,5,7,8,9};
         int [] arr2 = {2,3,5,6,7,9};
-        System.out.println(Arrays.toString(unionUsingMerge(arr1, arr2)));
+        //System.out.println(Arrays.toString(unionUsingMerge(arr1, arr2)));
+        System.out.println(Arrays.toString(intersection(arr1, arr2)));
     }
 }
